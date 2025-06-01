@@ -1,14 +1,36 @@
-# Dr Bimmer AI
+# AutoShop Diagnostic Service
 
-This repository contains a minimal prototype for **Dr Bimmer AI**, an automotive diagnostics and shop management platform. The project features a FastAPI backend and a lightweight React-based frontend.
+This project provides a minimal prototype for an AI-powered vehicle
+inspection and diagnostic service. Due to the limited runtime
+environment, computer vision and real-time diagnostics are implemented
+as simple placeholders.
 
-## Backend
-- Located in `backend/`
-- Start with `uvicorn app.main:app --reload`
-- Unit tests in `backend/tests`
+## Features
+- HTTP API with two endpoints:
+  - `POST /inspect` – accept image data and return a stub analysis.
+  - `POST /diagnostics` – interpret OBD-II fault codes using a small
+    local database.
+- Modular Python package with configuration utilities.
+- Basic unit tests using the standard library `unittest` module.
 
-## Frontend
-- Located in `frontend/`
-- Open `index.html` directly in the browser for a demo
+## Quick Start
+Run the development server:
 
-This prototype demonstrates basic API endpoints and a simple WebSocket connection. It does not yet integrate with real AI models or AR interfaces.
+```bash
+python -m autoshop.main
+```
+
+Send requests using `curl` or any HTTP client. Example diagnostic
+request:
+
+```bash
+curl -X POST http://localhost:8080/diagnostics \
+     -H 'Content-Type: application/json' \
+     -d '{"codes": ["P0001", "P0123"]}'
+```
+
+Run the test suite:
+
+```bash
+python -m unittest discover tests
+```
