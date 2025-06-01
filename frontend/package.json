@@ -1,0 +1,13 @@
+{
+  "name": "drbimmer-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "echo 'Starting frontend (placeholder)'",
+    "test": "echo 'No tests'"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
